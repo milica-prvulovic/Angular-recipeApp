@@ -16,6 +16,8 @@ export class Logout implements Action {
 }
 export class SetToken implements Action {
     readonly type = SET_TOKEN;
+
+    constructor (public payload: string) {}
 }
 
-export type AuthAction = Signup | Signin | Logout | SetToken;
+export type AuthActions = Signup | Signin | Logout | SetToken;

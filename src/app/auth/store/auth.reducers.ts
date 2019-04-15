@@ -11,7 +11,7 @@ const initialState: State = {
     authenticated: false
 };
 
-export function authReducer(state= initialState, action: AuthActions.AuthAction) {
+export function authReducer(state= initialState, action: AuthActions.AuthActions) {
     switch(action.type) {
         case (AuthActions.SIGNUP):
         case (AuthActions.SIGNIN):
@@ -25,6 +25,11 @@ export function authReducer(state= initialState, action: AuthActions.AuthAction)
                 token: null,
                 authenticated: false
             };
+        case (AuthActions.SET_TOKEN):
+            return{
+                  ...state,
+                    token: action.payload
+                };
         default:
             return state;
     }
