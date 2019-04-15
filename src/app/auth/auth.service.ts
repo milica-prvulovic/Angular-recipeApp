@@ -30,7 +30,7 @@ export class AuthService {
                 firebase.auth().currentUser.getIdToken()
                     .then(
                         (token: string) => {
-                            this.store.dispatch(new AuthAction.SetToken(token));//on je stavio u SetToken(token), bez tokena nema greske
+                            this.store.dispatch(new AuthAction.SetToken());//on je stavio u SetToken(token), bez tokena nema greske
                         }
                     )
             }
