@@ -31,6 +31,4 @@ import { recipeReducer } from './store/recipe.reducers';
         StoreModule.forFeature('recipes', recipeReducer)
     ]
 })
-export class RecipesModule {
-    
-}
+export class RecipesModule {}
