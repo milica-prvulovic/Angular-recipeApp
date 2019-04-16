@@ -1,6 +1,6 @@
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-
+import { Router } from '@angular/router';
 import * as AuthActions from './auth.actions';
 
 import 'rxjs/add/operator/map';
@@ -50,6 +50,7 @@ export class AuthEffects {
         return fromPromise(firebase.auth().currentUser.getIdToken());
     })
     .pipe(mergeMap((token: string) => {
+        this.router.navigate(['/']);
         return [
             {
                 type: AuthActions.SIGNIN
@@ -61,6 +62,6 @@ export class AuthEffects {
         ];
     }));
 
-    constructor( private actions$: Actions) {
+    constructor( private actions$: Actions, private router: Router ) {
     }
 }
