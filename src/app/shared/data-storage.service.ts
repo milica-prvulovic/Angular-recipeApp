@@ -4,15 +4,12 @@ import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
 import {map} from 'rxjs/operators' ;
 
-
-
 @Injectable()
 export class DataStorageService {
 constructor( private httpClient: HttpClient, 
              private recipeService: RecipeService) {}
 
     storeRecipes() {
-
     //const  headers = new HttpHeaders().set('Authorization', 'Bearer jlkjmknjkj');
 /*      return this.httpClient.put('https://ng-recipe-book-2f628.firebaseio.com/recipes.json',
         this.recipeService.getRecipes(), {
@@ -26,7 +23,6 @@ constructor( private httpClient: HttpClient,
     }
 
     getRecipes() {
-
      /*    this.httpClient.get<Recipe[]>('https://ng-recipe-book-2f628.firebaseio.com/recipes.json?auth='+ token) */
         this.httpClient.get<Recipe[]>('https://ng-recipe-book-2f628.firebaseio.com/recipes.json',
         { observe: 'body',
@@ -42,7 +38,6 @@ constructor( private httpClient: HttpClient,
                     }
                 }
                 return recipes; 
-
                }
             ))
             .subscribe(
