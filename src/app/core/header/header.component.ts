@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataStorageService } from '../../shared/data-storage.service';
 // import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducers';
@@ -18,9 +17,7 @@ export class HeaderComponent implements OnInit {
         this.featureSelected.emit(feature);
     } */
     authState: Observable<fromAuth.State>;
-    constructor(private dataStoregeService: DataStorageService,
-                private store: Store<fromApp.AppState>){
-                }
+    constructor(private store: Store<fromApp.AppState>){}
 
     ngOnInit() {
         this.authState = this.store.select('auth');
