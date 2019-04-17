@@ -40,7 +40,6 @@ export class RecipeEditComponent implements OnInit {
       this.recipeForm.value['imagePath'],
       this.recipeForm.value['ingredients']); */
     if (this.editMode) {
-      this.recipeService.updateRecipe(this.id, this.recipeForm.value);
       this.store.dispatch(new RecipeActions.UpdateRecipe({
       index: this.id,
       updateRecipe: this.recipeForm.value
