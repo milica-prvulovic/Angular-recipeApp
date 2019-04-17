@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Store } from '@ngrx/store'; 
 import * as ShoppingListActions from '../../shopping-list/store/shopping-list.actions';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import * as fromRecipe from '../store/recipe.reducers';
-//import { take } from 'rxjs/operators'; ako koristimo .pipe(take(1))
+import { take } from 'rxjs/operators';
 import * as RecipeActions from '../store/recipe.actions';
-import 'rxjs/add/operator/take';
+
 
 @Component({
   selector: 'app-recipes-detial',
@@ -34,7 +34,7 @@ export class RecipesDetialComponent implements OnInit {
 
   onAddToShoppingList(){
     this.store.select('recipes')
-    .take(1)
+    .pipe(take(1))
     .subscribe((recipeState: fromRecipe.State) =>{
       this.store.dispatch(new ShoppingListActions.AddIngredients(
         recipeState.recipes[this.id].ingredients)

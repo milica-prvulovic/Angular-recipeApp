@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as ShoppingListActions from '../store/shopping-list.actions';
 import * as formApp from '../../store/app.reducers';
