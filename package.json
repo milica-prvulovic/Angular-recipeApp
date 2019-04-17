@@ -8,14 +8,14 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-   "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
-   "serve:ssr": "node dist/server.js",
-   "build:client-and-server-bundles": "ng build --prod && ng run your-project-name:server",
-   "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
+    "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "serve:ssr": "node dist/server.js",
+    "build:client-and-server-bundles": "ng build --prod && ng run your-project-name:server",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.2.0",
+    "@angular/animations": "^7.2.13",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/core": "~7.2.0",
